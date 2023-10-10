@@ -1,5 +1,11 @@
 import NavBar from "../components/navbar";
 import TeamSection from "../components/teamcards";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css/bundle'
+import "../styles/home.css";
+import TestimonialCard from "../components/testimonialcard";
+import testimonials from "./testimonial_data";
 
 export default function HomePage() {
   return (
@@ -58,9 +64,69 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <TeamSection />
+
+      <section id="events-section">
+        <div className="events-nav">
+          <button className="events-nav-btn active">Upcoming</button>
+          <button className="events-nav-btn">Past</button>
+        </div>
+      </section>
+
+      <section id="gallery-section">
+        <h1 class="header-font-700">Gallery</h1>
+        <div className="gallery-container">
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation={true}
+            spaceBetween={50}
+            pagination={{ clickable: true }}
+          >
+            <SwiperSlide>
+              <img src="assets/gallery_preview/1.jpg" class="d-block" alt="image" id="carousel-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="assets/gallery_preview/2.jpg" class="d-block" alt="image" id="carousel-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="assets/gallery_preview/3.jpg" class="d-block" alt="image" id="carousel-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="assets/gallery_preview/4.jpg" class="d-block" alt="image" id="carousel-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="assets/gallery_preview/5.jpg" class="d-block" alt="image" id="carousel-img" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+
+        <a href="/gallery" class="btn bg-color-primary-blue color-white"
+        >Visit Gallery</a>
+      </section >
 
 
-      <TeamSection/>
+      <section id="testimonials-section">
+        <div class="heading">
+          <h1 class="header-font-700">Testimonials</h1>
+          <p class="body-font-500">Hear From Our Community</p>
+        </div>
+        <div class="testimonial-container">
+          {
+            testimonials.map((testimonial) => {
+              return (
+                <TestimonialCard
+                  name={testimonial.name}
+                  designation={testimonial.designation}
+                  testimonial={testimonial.testimonial}
+                  avatar={testimonial.avatar}
+                />
+              )
+            })
+          }
+        </div>
+      </section>
+
     </>
   );
 }
