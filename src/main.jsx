@@ -13,6 +13,9 @@ import NavBar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
 import ContactPage from "./pages/contact.jsx";
 
+import SnackbarProvider from '@brancol/react-snackbar'
+
+
 const Layout = () => {
   return (
     <>
@@ -45,6 +48,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+  <SnackbarProvider>
     <RouterProvider router={router} />
+    </SnackbarProvider>
   </React.StrictMode>
 );

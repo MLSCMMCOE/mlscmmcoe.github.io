@@ -296,7 +296,10 @@ body {
   color: #fff;
 } */
 
-
+.gallery_btn{
+  border: none;
+  height: 30%;
+}
 
 nav .slider {
   position: absolute;
