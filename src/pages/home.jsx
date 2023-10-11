@@ -6,11 +6,12 @@ import 'swiper/css/bundle'
 import "../styles/home.css";
 import TestimonialCard from "../components/testimonialcard";
 import testimonials from "./testimonial_data";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <section id="hero">
         <div className="hero-container">
           <div className="hero-content">
@@ -101,8 +102,8 @@ export default function HomePage() {
           </Swiper>
         </div>
 
-        <a href="/gallery" class="btn bg-color-primary-blue color-white"
-        >Visit Gallery</a>
+        <Link to={"/gallery"} class="btn bg-color-primary-blue color-white"
+        >Visit Gallery</Link>
       </section >
 
 

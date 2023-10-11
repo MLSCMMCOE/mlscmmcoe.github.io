@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
+
 export default function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-            <a className="navbar-brand header-font-700" href="#"
-                ><span className="color-accent-blue">MLSC</span> MMCOE</a
-            >
+            <Link className="navbar-brand header-font-700" to={"/"}><span className="color-accent-blue">MLSC</span> MMCOE</Link>
             <button
                 className="navbar-toggler"
                 type="button"
@@ -19,8 +19,8 @@ export default function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                    <a className="nav-link body-font-500" aria-current="page" href="#"
-                    >Home</a
+                    <Link className="nav-link body-font-500" aria-current="page" to="/"
+                    >Home</Link
                     >
                 </li>
                 <li className="nav-item">
@@ -45,11 +45,10 @@ export default function NavBar() {
                     >
                 </li>
                 <li className="nav-item">
-                    <a
-                    href="/contact"
+                    <Link
+                    to={"/contact"}
                     className="nav-btn body-font-500 bg-color-primary-blue color-white"
-                    >Contact Us</a
-                    >
+                    >Contact Us</Link>
                 </li>
                 </ul>
             </div>
