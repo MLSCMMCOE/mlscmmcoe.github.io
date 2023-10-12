@@ -67,12 +67,12 @@ export default function HomePage() {
       </section>
       <TeamSection />
 
-      <section id="events-section">
+      {/* <section id="events-section">
         <div className="events-nav">
           <button className="events-nav-btn active">Upcoming</button>
           <button className="events-nav-btn">Past</button>
         </div>
-      </section>
+      </section> */}
 
       <section id="gallery-section">
         <h1 class="header-font-700">Gallery</h1>
